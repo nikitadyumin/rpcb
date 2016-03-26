@@ -13,11 +13,11 @@ Instead, everyone should be aware of this technique and its advantages, so that 
 2. What is reactive?
 3. Underhood
 4. JS tools
-..0 Comparison
-..1 RxJS
-..2 Bacon.js
-..3 Kefir.js
-..4 Most.js
-..5 Cycle.js
+    1. Comparison
+    2.  RxJS
+    3. Bacon.js
+    4. Kefir.js
+    5. Most.js
+    6. Cycle.js
 5. Other languages 
 ..1 Elm
