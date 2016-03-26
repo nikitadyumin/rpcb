@@ -14,10 +14,11 @@ Instead, everyone should be aware of this technique and its advantages, so that 
 3. Underhood
 4. JS tools
     1. Comparison
-    2.  RxJS
+    2. RxJS
     3. Bacon.js
     4. Kefir.js
     5. Most.js
     6. Cycle.js
 5. Other languages 
-..1 Elm
+    1. Elm
+    2. RxJava
