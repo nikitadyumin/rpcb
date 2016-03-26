@@ -14,30 +14,30 @@
             <td>fromArray</td>
             <td>from (sync)
                 <pre>
-                    var subsRx = Rx.Observable.from([1,2,3])
-                      .subscribe(
-                        v => console.log(typeof subsRx)
-                      );
-                    console.log(typeof subsRx);
+var subsRx = Rx.Observable.from([1,2,3])
+  .subscribe(
+    v => console.log(typeof subsRx)
+  );
+console.log(typeof subsRx);
                 </pre>
             </td>
             <td>fromArray (sync)
                 <pre>
-                    var subsBacon = Bacon.fromArray([1,2,3])
-                      .onValue(
-                        v => console.log(typeof subsBacon)
-                      );
-                    console.log(typeof subsBacon);
+var subsBacon = Bacon.fromArray([1,2,3])
+  .onValue(
+    v => console.log(typeof subsBacon)
+  );
+console.log(typeof subsBacon);
                 </pre>
             </td>
             <td>from (async)
                 <pre>
-                    var subsMost = most.from([1,2,3])
-                      .observe(
-                        v => console.log(typeof subsMost)
-                      );
-                    
-                    console.log(typeof subsMost);
+var subsMost = most.from([1,2,3])
+  .observe(
+    v => console.log(typeof subsMost)
+  );
+
+console.log(typeof subsMost);
                 </pre>
             </td>
             <td>- (not available)
