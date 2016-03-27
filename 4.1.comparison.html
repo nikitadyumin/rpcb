@@ -15,6 +15,43 @@
 
     <tbody>
         <tr>
+            <td>single value</td>
+            <td>Rx.Observable.of (sync)
+                <pre>
+var sub1 = Rx.Observable.of(1)
+  .subscribe(v => console.log(typeof sub1));
+// "undefined"
+                </pre>
+            </td>
+            <td>Bacon.once (sync, EventStream)
+                <pre>
+var sub21 = Bacon.once(1)
+  .onValue(v => console.log(typeof sub21));
+// "undefined"
+                </pre>
+                Bacon.constant (sync, Property)
+                <pre>
+var sub22 = Bacon.constant(1)
+  .onValue(v => console.log(typeof sub22));
+// "undefined"
+                </pre>
+            </td>
+            <td>Kefir.constant (sync, Property)
+                <pre>
+var sub3 = Kefir.constant(1)
+  .onValue(v => console.log(typeof sub3));
+// "undefined"
+                </pre>
+            </td>
+            <td>most.of (async)
+                <pre>
+var sub4 = most.of(1)
+  .observe(v => console.log(typeof sub4));
+// "object"
+                </pre>
+            </td>
+        </tr>
+        <tr>
             <td>create</td>
             <td>Rx.Observable.create (sync)
                 <pre>
@@ -27,9 +64,9 @@ var subsRx = Rx.Observable.create(o => {
     v => console.log(10, typeof subsRx)
   );
 console.log(1, typeof subsRx);
-// 10 "undefined" 
-// 10 "undefined" 
-// 10 "undefined" 
+// 10 "undefined"
+// 10 "undefined"
+// 10 "undefined"
 // 1 "object"
                 </pre>
             </td>
@@ -44,9 +81,9 @@ var subsBacon = Bacon.fromBinder(sink => {
     v => console.log(20, typeof subsBacon)
   );
 console.log(2, typeof subsBacon);
-// 20 "undefined" 
-// 20 "undefined" 
-// 20 "undefined" 
+// 20 "undefined"
+// 20 "undefined"
+// 20 "undefined"
 // 2, "function"
                 </pre>
             </td>
@@ -61,9 +98,9 @@ var subsKefir = Kefir.stream(o => {
     v => console.log(30, typeof subsKefir)
   );
 console.log(3, typeof subsKefir);
-// 30 "undefined" 
-// 30 "undefined" 
-// 30 "undefined" 
+// 30 "undefined"
+// 30 "undefined"
+// 30 "undefined"
 // 3, "object"
                 </pre>
             </td>
@@ -78,9 +115,9 @@ var subsMost = most.create(add => {
     v => console.log(40,  typeof subsMost)
   );
 console.log(4, typeof subsMost);
-// 4 "object" 
+// 4 "object"
 // 40 "object"
-// 40 "object" 
+// 40 "object"
 // 40 "object"
                 </pre>
             </td>
