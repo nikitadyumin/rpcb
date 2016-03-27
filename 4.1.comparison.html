@@ -18,16 +18,70 @@
             <td>create</td>
             <td>Rx.Observable.create (sync)
                 <pre>
+var subsRx = Rx.Observable.create(o => {
+  o.next(1);
+  o.next(2);
+  o.next(3);
+  return () => {}
+}).subscribe(
+    v => console.log(10, typeof subsRx)
+  );
+console.log(1, typeof subsRx);
+// 10 "undefined" 
+// 10 "undefined" 
+// 10 "undefined" 
+// 1 "object"
                 </pre>
             </td>
             <td>Bacon.fromBinder (sync)
                 <pre>
+var subsBacon = Bacon.fromBinder(sink => {
+  sink(1);
+  sink(2);
+  sink(3);
+  return () => {}
+}).onValue(
+    v => console.log(20, typeof subsBacon)
+  );
+console.log(2, typeof subsBacon);
+// 20 "undefined" 
+// 20 "undefined" 
+// 20 "undefined" 
+// 2, "function"
                 </pre>
             </td>
             <td>Kefir.stream (sync)
+                <pre>
+var subsKefir = Kefir.stream(o => {
+  o.emit(1);
+  o.emit(2);
+  o.emit(3);
+  return () => {}
+}).onValue(
+    v => console.log(30, typeof subsKefir)
+  );
+console.log(3, typeof subsKefir);
+// 30 "undefined" 
+// 30 "undefined" 
+// 30 "undefined" 
+// 3, "object"
+                </pre>
             </td>
             <td>most.create (async)
                 <pre>
+var subsMost = most.create(add => {
+  add(1);
+  add(2);
+  add(3);
+  return () => {}
+}).observe(
+    v => console.log(40,  typeof subsMost)
+  );
+console.log(4, typeof subsMost);
+// 4 "object" 
+// 40 "object"
+// 40 "object" 
+// 40 "object"
                 </pre>
             </td>
         </tr>
