@@ -199,5 +199,40 @@ console.log(typeof subsMost);
                 </pre>
             </td>
         </tr>
+        <tr>
+            <td>subscribe unsubscribe</td>
+            <td>.subscribe
+                <pre>
+var sub1 = Rx.Observable.of(1)
+  .subscribe(() => {});
+console.log(typeof sub1.unsubscribe);
+// "function" (sub1 : subscription)
+                </pre>
+            </td>
+            <td>.onValue, .onError, .onEnd
+                <pre>
+var sub2 = Bacon.never()
+  .onValue(() => {});
+console.log(typeof sub2);
+// "function"
+                </pre>
+            </td>
+            <td>.onValue, .onError, .onEnd
+                <pre>
+var sub3 = Kefir.constant()
+  .onValue(() => {});
+console.log(typeof sub3);
+// "object" (sub3 : Stream)
+                </pre>
+            </td>
+            <td>.observe
+                <pre>
+var sub4 = most.of(1)
+  .observe(()=>{});
+console.log(typeof sub4);
+// "object" (sub4: Promise)
+                </pre>
+            </td>
+        </tr>
     </tbody>
 </table>
