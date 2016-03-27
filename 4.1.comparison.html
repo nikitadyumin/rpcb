@@ -52,6 +52,49 @@ var sub4 = most.of(1)
             </td>
         </tr>
         <tr>
+            <td>no values</td>
+            <td>Rx.Observable.never (no values, no end)
+                <pre>
+var sub1 = Rx.Observable.never()
+  .subscribe(
+    v => console.log(11, typeof sub1),
+    v => console.log(12, typeof sub1),
+    v => console.log(13, typeof sub1)
+  );
+// ...
+                </pre>
+            </td>
+            <td>Bacon.never (no values, ends immediately)
+                <pre>
+var sub2 = Bacon.never()
+  .onEnd(v => console.log(2, typeof sub2));
+// 2, "undefined"
+                </pre>
+            </td>
+            <td>Kefir.never (no values, ends immediately)
+                <pre>
+var sub3 = Kefir.never()
+  .onEnd(v => console.log(3, typeof sub3));
+// 3, "undefined"
+                </pre>
+            </td>
+            <td>most.never (no values, no end)
+                <pre>
+var sub41 = most.never()
+  .observe(()=>{})
+  .then(v => console.log(41, typeof sub41));
+// ...
+                </pre>
+                most.empty (no values, ends immediately)
+                <pre>
+var sub42 = most.empty()
+  .observe(()=>{})
+  .then(v => console.log(42, typeof sub42));
+// 42, "object"
+                </pre>
+            </td>
+        </tr>
+        <tr>
             <td>create</td>
             <td>Rx.Observable.create (sync)
                 <pre>
