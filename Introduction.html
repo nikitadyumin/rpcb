@@ -3,14 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Rx cookbook Introduction</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
 <h1>What is reactive?</h1>
 For the purpose of this book let's define <i>reactive programming</i> as programming relying on active producers,
 rather than active consumers.
 
-<h2>Pull vs Push</h2>
-<h2>Sync vs Async</h2>
+<p>
+    Active consumer queries a value from a passive producer (the value should be available):
+    <code>
+        const value = producer.getValue(); <br>
+        console.log(value);
+    </code>
+    which is a normal function (getter) call.
+</p>
+<p>
+    Passive consumer subscribes to an active producer and waits until the value is available:
+    <code>
+        producer.subscribe(value => console.log(value));
+    </code>
+    which is also familiar to us (event listener, callback).
+</p>
+
+<h2>Pull vs Push collections</h2>
+<h2>Sync vs Async collections</h2>
 
 <h2>References</h2>
 <h3>Videos</h3>

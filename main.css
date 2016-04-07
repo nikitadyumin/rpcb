@@ -4,3 +4,8 @@ pre {
 tr {
     vertical-align: top;
 }
+code {
+    display: block;
+    background-color: beige;
+    padding: 5px;
+}
