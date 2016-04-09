@@ -63,6 +63,16 @@ var sub1 = Rx.Observable.never()
   );
 // ...
                 </pre>
+            <td>Rx.Observable.never (no values, ends immediately)
+                <pre>
+var sub11 = Rx.Observable.never()
+  .subscribe(
+    v => console.log(111, typeof sub11),
+    v => console.log(112, typeof sub11),
+    v => console.log(113, typeof sub11)
+  );
+// ...
+                </pre>
             </td>
             <td>Bacon.never (no values, ends immediately)
                 <pre>
