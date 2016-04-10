@@ -9,3 +9,7 @@ code {
     background-color: beige;
     padding: 5px;
 }
+
+.chart {
+    width: 100%;
+}

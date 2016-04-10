@@ -1,18 +1,44 @@
 <head>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-    <link href="main.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./main.css"/>
 </head>
 <body>
 <h1> Reactive Programming Cookbook </h1>
 
-<h2> What is this? </h2>
+Focusing on the constituents of our applications' architecture we often neglect relations between them.
+In patterns like MVC relations are presented as simple and straightforward, while in reality they might be
+complex.
+<ul>
+    <li> several parts of a Model represent one entity on a View</li>
+    <li> View items a drawn from a single Model value</li>
+    <li> it takes several inputs to modify a single value in a Model</li>
+    <li> etc.</li>
+</ul>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-5 col-lg-4">
+            <b>Expectation</b>
+            <img src="images/MVC.png" class="chart">
+        </div>
+        <div class="col-md-5 col-lg-4">
+            <b>Reality</b>
+            <img src="images/MVC_reality.png" class="chart">
+        </div>
+    </div>
+</div>
+
+Reactive approach brings more attention to the relations. 
+
+<h2> What is this book? </h2>
 An attempt to explain reactive programming. An attempt to explore reactive programming.
 An attempt to find real-world examples of how reactive programming is useful in production code.
 
 <h2> Why? </h2>
 This is not an attempt to make everyone use reactive approach or specifically one of the libraries (frameworks,
 languages) right away.
-Instead, everyone should be aware of this technique and its advantages, so that NOT USING IT was a deliberate decision.
+Instead, everyone should be aware of this technique and its advantages, so that NOT USING IT was a deliberate
+decision.
 
 <h2> Contents </h2>
 <ol>
@@ -29,7 +55,6 @@ Instead, everyone should be aware of this technique and its advantages, so that 
     </ol>
     <li>Other languages</li>
     <ol>
-        <li>Elm</li>
         <li>RxJava</li>
     </ol>
 </ol>
