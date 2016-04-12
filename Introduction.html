@@ -49,29 +49,56 @@ console.log(it.next().value); // 'yo'
 console.log(it.next().value); // 'ya'
 console.log(it.next().done);  // true
 </pre>
-To push values from a collection to an observer we use the Observable patter:
-<pre>
+So, values in such collection are available on demand: either upon creation (see the example above) or on request (using generators),
+thus can be delivered all at once, synchronously.
 
+To push values from a collection to an observer we use the Observable pattern:
+<pre>
 function makeObservable(array){
     return {
        subscribe: function(next, complete){
-           array.forEach(next)
-           complete()
+           array.forEach(next);
+           complete();
        }
     }
 }
 var o = makeObservable(['yo', 'ya']);
 o.subscribe(
     function onValue(v) {
-        console.log(v)
+        console.log(v);
     },
     function onComplete() {
-        console.log('done')
+        console.log('done');
     }
 );
 </pre>
+Here onValue function is called every time a new value is available, when no more values are expected onComplete gets called.
 
 <h2>Sync vs Async collections</h2>
+Observables <i>can</i> emit values both synchronously and asynchronously providing a unified API:
+<pre>
+function createObservable(executor) {
+    return {
+        subscribe: executor
+    };
+}
+var o = createObservable(function(next) {
+        next(0);
+        next(1);
+        next(2);
+        setTimeout(next, 100, 3);
+        setTimeout(next, 200, 4);
+    });
+o.subscribe(
+    function onValue(v) {
+        console.log(v);
+    },
+    function onComplete() {
+        console.log('done');
+    }
+);
+</pre>
+First three values are delivered right away (synchronously), the other two after timeout (asynchronously).
 
 <h2>References</h2>
 <h3>Videos</h3>
