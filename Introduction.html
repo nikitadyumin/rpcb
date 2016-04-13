@@ -97,6 +97,13 @@ o.subscribe(
         console.log('done');
     }
 );
+console.log('synchronous stops here');
+// 0
+// 1
+// 2
+// "synchronous stops here"
+// 3
+// 4
 </pre>
 First three values are delivered right away (synchronously), the other two after timeout (asynchronously).
 
